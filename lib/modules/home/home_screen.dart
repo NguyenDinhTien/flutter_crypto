@@ -75,7 +75,7 @@ class HomeScreen extends StatelessWidget {
           children: controller.listTabScreen,
         ),
         bottomNavigationBar: ConvexAppBar(
-          height: 0.07 * h,
+          height: 0.08 * h,
           curveSize: 70,
           backgroundColor: Theme.of(context).primaryColor,
           items: const [

@@ -94,6 +94,11 @@ class CoinCard extends StatelessWidget {
                       index
                     ]);
                   },
+                  onLongPress: () {
+                    if (controller is HomeController) {
+                      ShowDialogs.removeAllItems(context);
+                    }
+                  },
                   child: Ink(
                     child: Row(
                       children: [
@@ -334,5 +339,52 @@ class CoinCard extends StatelessWidget {
             ),
           ),
         ));
+  }
+}
+
+class ShowDialogs {
+  static Future<dynamic> removeAllItems(BuildContext context) {
+    final HomeController controller = Get.put(HomeController());
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(15))),
+            title: Text(
+              'Delete All Items?',
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                  color: Theme.of(context).textTheme.subtitle1!.color),
+            ),
+            content: Text('This will Delete all items in Favorite',
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400,
+                    color: Theme.of(context).textTheme.subtitle1!.color)),
+            actions: [
+              ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        Theme.of(context).primaryColor)),
+                onPressed: () {
+                  Get.back();
+                },
+                child: const Text('CANCEL'),
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        Theme.of(context).primaryColor)),
+                onPressed: () {
+                  controller.removeAllItemFavorite();
+                  Get.back();
+                },
+                child: const Text('ACCEPT'),
+              ),
+            ],
+          );
+        });
   }
 }

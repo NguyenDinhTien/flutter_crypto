@@ -43,7 +43,7 @@ class OverviewController extends GetxController
     tabController = TabController(vsync: this, length: myTabs.length);
     tabController.addListener(changeTabs);
     getDataCrypto(page: pageNumber);
-   Timer.periodic(const Duration(seconds: 15), (timer) => addDataToList());
+    Timer.periodic(const Duration(seconds: 15), (timer) => addDataToList());
   }
 
   @override
@@ -57,21 +57,23 @@ class OverviewController extends GetxController
   }
 
   addDataToList() async {
-    if (isScroll.value)
-      return ;
-    else {
-      int pageUpdate = indexListBuilder>8? (((indexListBuilder.value - 3) / 30).floor() + 1):1;
+    if (isScroll.value) {
+      return;
+    } else {
+      int pageUpdate = indexListBuilder > 8
+          ? (((indexListBuilder.value - 3) / 30).floor() + 1)
+          : 1;
       List dataUpdate =
           await getDataCrypto(page: pageUpdate, isUpdateList: true);
       if (dataUpdate.isNotEmpty && listCoin.isNotEmpty) {
-        
         int end = 30 * pageUpdate;
         int star = end - 30;
         listCoin.removeRange(star, end);
         listCoin.insertAll(star, dataUpdate);
         print('debugging');
-      } else
+      } else {
         return;
+      }
     }
     //print((1 / 30).floor());
   }
@@ -265,5 +267,14 @@ class OverviewController extends GetxController
     //   }
     // }
     //);
+  }
+
+  removeAllCryptoToBoxFavorite() async {
+    await hiveService.clearBoxes(hiveService.boxCryptoFavorite);
+    for (CoinModel item in listCoin) {
+      if (item.isFavorite.value == true) {
+        item.isFavorite.value = false;
+      }
+    }
   }
 }

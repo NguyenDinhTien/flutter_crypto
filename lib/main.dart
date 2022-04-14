@@ -2,6 +2,7 @@ import 'package:crypto_flutter/di.dart';
 import 'package:crypto_flutter/routes/app_pages.dart';
 import 'package:crypto_flutter/routes/app_routes.dart';
 import 'package:crypto_flutter/shared/shared.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -22,6 +23,13 @@ void main() async {
   Hive.registerAdapter(CoinFavoriteModelAdapter(), override: true);
   FlutterNativeSplash.remove();
   runApp(const MyApp());
+  // runApp(
+  //   DevicePreview(
+  //     enabled: !kReleaseMode,
+  //     builder: (context) => MyApp(), // Wrap your app
+  //   ),
+  // );
+
   configLoading();
 }
 

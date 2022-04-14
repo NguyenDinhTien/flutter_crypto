@@ -104,9 +104,13 @@ class HomeController extends GetxController {
     //   return FavoriteTab()
     //       .slideIt(context, index, animation, coinModel: coinModel);
     // }, duration: Duration(milliseconds: 500));
-    numberShimmer.value--;
+    
     overViewController.handlePressBtnFavorite(coinModel,
         isCallByHomeController: true);
     listCoinFavorite.removeAt(index);
+  }
+  removeAllItemFavorite()async{
+    listCoinFavorite.value=[];
+    await overViewController.removeAllCryptoToBoxFavorite();                        
   }
 }
