@@ -19,10 +19,10 @@ class AppPages {
     GetPage(
         name: Routes.AUTH, page: () => AuthScreen(), binding: AuthBinding()),
     GetPage(name: Routes.HOME, page: () => HomeScreen(), binding: HomeBiding()),
-    GetPage(
-        name: Routes.DRAWER,
-        page: () => DrawerScreen(),
-        binding: DrawerBiding()),
+    // GetPage(
+    //     name: Routes.DRAWER,
+    //     page: () => DrawerScreen(),
+    //     binding: DrawerBiding()),
     GetPage(
         name: Routes.SEARCH,
         page: () => SearchScreen(),

@@ -5,7 +5,7 @@ abstract class Routes {
   static const REGISTER = '/register';
   static const HOME = '/home';
   static const DRAWER = '/drawer';
-  static const OVERVIEW='/overview';
-  static const SEARCH='/search';
-  static const COIN_DETAIL='/coin-detail';
+  static const OVERVIEW = '/overview';
+  static const SEARCH = '/search';
+  static const COIN_DETAIL = '/coin-detail';
 }

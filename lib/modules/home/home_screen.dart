@@ -1,10 +1,9 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:crypto_flutter/modules/drawers/drawer.dart';
+import 'package:crypto_flutter/shared/utils/retain_widget.dart';
 import 'package:crypto_flutter/routes/app_routes.dart';
 import 'package:crypto_flutter/shared/shared.dart';
-import 'package:crypto_flutter/retainWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get.dart';
 
@@ -15,14 +14,11 @@ class HomeScreen extends StatelessWidget {
 
   final HomeController controller = Get.put(HomeController());
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  final _channel = const MethodChannel('com.example/app_retain');
+  
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    // return WillPopScope(
-    //   onWillPop: () async => true,
-    //   child: Obx(() => _buildWidget(context)),
-    // );
+    
      return AppRetainWidget(
       child: Obx(() => _buildWidget(context)),
     );

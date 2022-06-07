@@ -154,6 +154,8 @@ class OverviewController extends GetxController
       return [];
     } catch (e) {
       //EasyLoading.dismiss();
+      print(e);
+      print('debugging');
       errorMsg.value = e.toString();
       return [];
     }

@@ -121,12 +121,11 @@ class CoinDetailScreen extends GetView<CoinDetailController> {
                                     controller.coinModel!.marketCapRank
                                         .toString()),
                             rowData(
-                                '24h Hight / 24h Low',
+                                '24h Hight',
                                 "\$" +
-                                    controller.coinModel!.high24h.toString() +
-                                    " / " +
-                                    "\$" +
-                                    controller.coinModel!.low24h.toString()),
+                                    controller.coinModel!.high24h.toString()),
+                            rowData('24h Low',
+                                "\$" + controller.coinModel!.low24h.toString()),
                             rowData('All-Time Hight',
                                 "\$" + controller.coinModel!.ath.toString()),
                             rowData('All-Time Low',
@@ -209,9 +208,7 @@ class CustomSliverDelegate extends SliverPersistentHeaderDelegate {
               backgroundColor: Colors.green,
               leading: IconButton(
                 icon: const Icon(Icons.menu),
-                onPressed: () {
-                 
-                },
+                onPressed: () {},
               ),
               elevation: 0.0,
               title: Opacity(

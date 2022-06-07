@@ -381,7 +381,7 @@ class ShowDialogs {
                   controller.removeAllItemFavorite();
                   Get.back();
                 },
-                child: const Text('ACCEPT'),
+                child: const Text('DELETE'),
               ),
             ],
           );

@@ -188,7 +188,7 @@ class CardTrending extends StatelessWidget {
   final String name;
   final String img;
   final String symbol;
-  final int ranking;
+  int? ranking;
   final bool isBorder;
   final SearchController controller = Get.find();
   @override
@@ -203,7 +203,7 @@ class CardTrending extends StatelessWidget {
         // shape: RoundedRectangleBorder(borderRadius: borderRadius),
       ),
       onPressed: () {
-        if (WidgetsBinding.instance!.window.viewInsets.bottom != 0) {
+        if (WidgetsBinding.instance.window.viewInsets.bottom != 0) {
           AppFocus.unfocus(context);
         } else {
           controller.fetchCoinDetail(id);
@@ -288,12 +288,14 @@ class CardTrending extends StatelessWidget {
             const Expanded(
               child: SizedBox(),
             ),
-            Text(
-              '#' + ranking.toString(),
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).textTheme.subtitle2!.color),
-            )
+            ranking != null
+                ? Text(
+                    '#' + ranking.toString(),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).textTheme.subtitle2!.color),
+                  )
+                : const SizedBox()
           ],
         ),
       ),

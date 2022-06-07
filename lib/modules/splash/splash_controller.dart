@@ -6,7 +6,6 @@ class SplashController extends GetxController {
   @override
   void onReady() async {
     super.onReady();
-
     await Future.delayed(const Duration(milliseconds: 2000));
     // var storage = Get.find<SharedPreferences>();
     // try {
@@ -19,6 +18,5 @@ class SplashController extends GetxController {
     // Get.toNamed(Routes.AUTH);
     // Get.toNamed(Routes.HOME);
     Get.offAndToNamed(Routes.HOME);
-    // }
   }
 }

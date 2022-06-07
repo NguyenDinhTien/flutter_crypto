@@ -1,6 +1,8 @@
 ## About the project
+
 The purpose of this project is to develop the tracking price Cryptocurrency, markets data and charts experience.
 This project has been built using the Flutter framework, which allows to build an app for mobile, desktop & web, from a single codebase.
+
 <p float="center", align="justify ">
   <img src="https://user-images.githubusercontent.com/22581967/163162262-88fe2535-3d5f-4db1-8c88-3412a37e2e3a.png" width="200" />
   
@@ -16,8 +18,8 @@ This project has been built using the Flutter framework, which allows to build a
   <img src="https://user-images.githubusercontent.com/22581967/163162248-8fa1e311-50b9-4fe7-b408-c72a64b32c19.png" width="200" />
 </p>
 
-
 ## Features
+
 - Beautiful and clean UI.
 - Searching trending cryptocurrencies
 - Browse cryptocurrencies and markets data.
@@ -25,12 +27,11 @@ This project has been built using the Flutter framework, which allows to build a
 - Refresh data.
 - Switching between Night and Day mode.
 
+## Download
 
-
-
+- [Download for android](https://drive.google.com/file/d/17ANFsSOnv1lhYerxVbufkwGzeXOMMPqu/view?usp=sharing)
 
 ## Getting Started
-
 
 **Step 1:**
 
@@ -42,8 +43,8 @@ https://github.com/NguyenDinhTien/flutter_crypto.git
 
 **Step 2:**
 
-Go to project root and execute the following command in console to get the required dependencies: 
+Go to project root and execute the following command in console to get the required dependencies:
 
 ```
-flutter pub get 
+flutter pub get
 ```

@@ -12,10 +12,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'models/models.dart';
 import 'theme/theme.dart';
 
-// {
-//     "email": "eve.holt@reqres.in",
-//     "password": "pistol"
-// }
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DenpendencyInjection.init();
@@ -33,9 +29,6 @@ void main() async {
   configLoading();
 }
 
-// Future initialization() async {
-//   await Future.delayed(const Duration(seconds: 3));
-// }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -46,18 +39,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       enableLog: true,
       initialRoute: Routes.HOME,
-      //defaultTransition: Transition.fade,
       getPages: AppPages.routes,
-      //initialBinding: AppBinding(),
-      //smartManagement: SmartManagement.keepFactory,
       title: 'Flutter GetX Boilerplate',
       theme: Themes().lightTheme,
       darkTheme: Themes().darkTheme,
       themeMode: ThemeService().getThemeMode(),
-
-      //locale: TranslationService.locale,
-      // fallbackLocale: TranslationService.fallbackLocale,
-      // translations: TranslationService(),
       builder: EasyLoading.init(),
     );
   }
@@ -67,15 +53,12 @@ void configLoading() {
   EasyLoading.instance
     ..indicatorType = EasyLoadingIndicatorType.threeBounce
     ..loadingStyle = EasyLoadingStyle.custom
-    // ..indicatorSize = 45.0
     ..radius = 10.0
-    // ..progressColor = Colors.yellow
     ..backgroundColor = ColorConstants.GREY_COLOR
     ..indicatorColor = ThemeService().isDarkMode
         ? ColorConstants.PRIMARY_COLOR_DARK
         : ColorConstants.PRIMARY_COLOR
     ..textColor = hexToColor('#64DEE0')
-    // ..maskColor = Colors.red
     ..userInteractions = false
     ..dismissOnTap = true
     ..animationStyle = EasyLoadingAnimationStyle.scale;

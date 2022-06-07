@@ -64,7 +64,6 @@ class SearchController extends GetxController {
                   isBorder: lastItem != item ? true : false,
                 );
                 tempList.add(data);
-                print('debugging');
               }
               if (tempList.isNotEmpty) {
                 listSearchQuery.value = tempList;
